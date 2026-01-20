@@ -1,53 +1,297 @@
 
-
-
-.bio {
-    display: flex;
+.hero {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 70px 0 30px;
     align-items: center;
-    justify-content: space-between;
-
-    background: #ecf0f1;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    width: 95%;
-    margin: 50px auto;
 }
 
-.bio div {
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -30px -20px;
+    background:
+        radial-gradient(700px at 18% 20%, rgba(51, 255, 153, 0.12), transparent 60%),
+        radial-gradient(700px at 72% 18%, rgba(143, 214, 255, 0.12), transparent 60%),
+        radial-gradient(900px at 80% 90%, rgba(51, 255, 153, 0.08), transparent 65%);
+    z-index: -2;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: -30px -20px;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 54px 54px;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+    mask-image: radial-gradient(circle at 35% 30%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 62%);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.18;
+    margin-bottom: 16px;
+}
+
+.hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(51, 255, 153, 0.25);
+    background: rgba(51, 255, 153, 0.08);
+    color: var(--text);
+    text-transform: none;
+    letter-spacing: 0.2px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.hero-accent {
+    color: var(--accent-neon);
+    text-shadow: 0 0 18px rgba(51, 255, 153, 0.22);
+}
+
+.hero .lede {
+    margin-bottom: 22px;
+}
+
+.hero-actions {
     display: flex;
-    flex-direction: column;
-    text-align: left;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
 }
 
-.bio h2 {
-    color: #2c3e50;
-    font-size: 1.8rem;
-    margin: 5px 0;
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.bio img {
-    width: 150px;
-    height: 150px;
+.hero-tags span {
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 12px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.9rem;
+}
+
+.hero-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 320px;
+}
+
+.avatar {
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #2c3e50;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 2rem;
+    background: radial-gradient(circle at 30% 30%, var(--accent-neon), var(--accent));
+    color: #07130c;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
 }
 
-/* Section principale */
-section {
-    text-align: center;
-    margin: 40px auto;
-    width: 80%;
+.glow {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(51, 255, 153, 0.16), rgba(143, 214, 255, 0.10), transparent 65%);
+    filter: blur(8px);
+    z-index: 1;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #2c3e50;
+.badge {
+    position: absolute;
+    bottom: 18px;
+    right: 30px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text);
+    font-weight: 600;
+    z-index: 3;
+    box-shadow: var(--shadow);
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin: 30px auto 10px;
+}
+
+.highlight-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 18px 16px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.highlight-card .label {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.highlight-card .metric {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 6px 0;
+}
+
+.highlight-card .detail {
+    color: var(--muted);
+}
+
+.about {
+    margin: 60px auto;
+    display: grid;
+    gap: 18px;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.timeline-card {
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.timeline-card h3 {
+    margin-bottom: 8px;
+}
+
+.projects {
+    margin: 60px auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.project-card {
+    padding: 18px;
+    border-radius: 16px;
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.project-card .card-top {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: rgba(143, 214, 255, 0.12);
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.project-card h3 {
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    color: var(--muted);
     margin-bottom: 10px;
 }
 
-section p {
-    font-size: 1.2rem;
-    color: #555;
+.text-link {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.ambitions {
+    margin: 60px auto;
+}
+
+.ambition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.ambition-card {
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.ambition-card h3 {
+    margin-bottom: 8px;
+}
+
+.ambition-card p {
+    color: var(--muted);
+}
+
+.passions {
+    margin: 60px auto;
+}
+
+.passion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.passion-card {
+    padding: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.passion-card h3 {
+    margin-bottom: 8px;
+}
+
+.passion-card p {
+    color: var(--muted);
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-visual {
+        height: 260px;
+    }
+
+    .avatar {
+        width: 180px;
+        height: 180px;
+    }
 }

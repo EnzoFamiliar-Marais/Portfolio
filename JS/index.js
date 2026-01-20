@@ -1,35 +1,28 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.project-card, .timeline-card, .highlight-card, .ambition-card');
 
-document.addEventListener("DOMContentLoaded", function () {
-    let divBio = document.getElementsByClassName('bio');
-    if (divBio.length === 0) {
-        console.error("Aucun élément avec la classe 'bio' trouvé.");
-        return;
-    }
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const { left, top, width, height } = card.getBoundingClientRect();
+            const x = e.clientX - left;
+            const y = e.clientY - top;
+            card.style.setProperty('--mx', `${(x / width) * 100}%`);
+            card.style.setProperty('--my', `${(y / height) * 100}%`);
+        });
 
-    let circle = document.createElement('div');
-    circle.style.width = '500px';
-    circle.style.height = '500px';
-    circle.style.backgroundImage = 'url(https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png)';
-    circle.style.backgroundSize = 'cover';
-    circle.style.backgroundRepeat = 'no-repeat';
-    circle.style.backgroundPosition = 'center';
-    circle.style.borderRadius = '50%';
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+            card.style.transform = 'translateY(-4px)';
+            card.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.35)';
+            card.style.background = 'radial-gradient(circle at var(--mx) var(--my), rgba(143,214,255,0.12), rgba(255,255,255,0.02))';
+        });
 
-
-    let container = divBio[0];
-    container.style.display = 'flex';
-    container.style.alignItems = 'center';
-
-    let paragraphContainer = document.createElement('div');
-    paragraphContainer.style.display = 'flex';
-    paragraphContainer.style.flexDirection = 'column';
-
-    while (container.firstChild) {
-        paragraphContainer.appendChild(container.firstChild);
-    }
-
-    container.appendChild(paragraphContainer);
-    container.appendChild(circle);
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.boxShadow = '';
+            card.style.background = '';
+        });
+    });
 });
 
 

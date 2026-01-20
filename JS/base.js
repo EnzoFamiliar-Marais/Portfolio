@@ -1,25 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let boutonsNav = document.getElementsByClassName('nav');
+    const links = document.querySelectorAll('.nav-links a');
+    if (!links.length) return;
 
-    for (let i = 0; i < boutonsNav.length; i++) {
-        ajouterEcouteurs(boutonsNav[i]);
-    }
+    const currentPath = window.location.pathname.replace(/\/index\.html$/, '/');
+
+    links.forEach(link => {
+        try {
+            const url = new URL(link.getAttribute('href') ?? '', window.location.href);
+            const linkPath = url.pathname.replace(/\/index\.html$/, '/');
+            const samePage = linkPath === currentPath;
+
+            if (samePage && (!url.hash || url.hash === window.location.hash)) {
+                link.classList.add('active');
+            }
+        } catch {
+            // ignore invalid URLs
+        }
+    });
 });
-
-function ajouterEcouteurs(bouton) {
-    bouton.style.transition = 'background-color 0.5s ease';
-
-    bouton.onclick = () => { 
-        bouton.style.backgroundColor = '';
-    };
-
-    bouton.onmouseover = () => {
-        bouton.style.backgroundColor = 'blue';
-        bouton.style.boxShadow = '0 0 5px rgba(255, 255, 255, 0.3)';
-    };
-
-    bouton.onmouseout = () => {
-        bouton.style.backgroundColor = '';
-        bouton.style.boxShadow = '';
-    };
-}

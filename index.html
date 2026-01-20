@@ -1,68 +1,194 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> 📚 Mon Portfolio</title>
-        <link rel="stylesheet" href="../CSS/index.css">
-        <link rel="stylesheet" href="../CSS/base.css">
+        <link rel="stylesheet" href="CSS/base.css">
+        <link rel="stylesheet" href="CSS/index.css">
     </head>
     <body>
- 
         <header>
-            <nav>
-                <ul>
-                    <li class="nav"><a href="/HTML/index.html">Accueil</a></li>
-                    <li class="nav"><a href="/HTML/Projet.html">Projets</a></li>
-                    <li class="nav"><a href="/HTML/Education.html">Education</a></li>
+            <nav class="navbar">
+                <div class="nav-logo">
+                    <img src="assets/accueil.png" alt="Logo maison">
+                    <span class="brand">Portfolio</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="HTML/Education.html">Mon Parcours</a></li>
+                    <li><a href="HTML/Projet.html">Mes Projets</a></li>
+                    <li><a href="HTML/Passions.html">Mes passions</a></li>
+                    <li><a href="#ambitions">Mes ambitions</a></li>
                 </ul>
+                <div class="nav-cta">
+                    <a class="btn ghost" href="mailto:enzo.familiar.marais@gmail.com">Me contacter</a>
+                </div>
             </nav>
         </header>
 
-        <div class="bio">
-            <p><h2>Enzo Familiar-Marais</h2></p>
-            <p><h2>19 ans</h2></p>
-            <p><h2>Bac +2 BUT Informatique</h2></p>
-        </div>
+        <main>
+            <section class="hero container">
+                <div class="hero-content">
+                    <p class="eyebrow">👋 Développeur en devenir — BUT Informatique</p>
+                    <h1>Je conçois des <span class="hero-accent">expériences numériques</span> claires, performantes et utiles.</h1>
+                    <p class="lede">
+                        Passionné d'informatique depuis toujours, je combine curiosité technique et esprit produit pour livrer des projets propres, robustes et centrés sur l'utilisateur.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="HTML/Projet.html">Voir mes projets</a>
+                        <a class="btn secondary" href="#ambitions">Découvrir mes ambitions</a>
+                    </div>
+                    <div class="hero-tags">
+                        <span>Front-end</span>
+                        <span>Back-end</span>
+                        <span>Sysadmin</span>
+                        <span>Apprentissage continu</span>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="glow"></div>
+                    <div class="avatar">EF</div>
+                    <div class="badge">Orléans · 19 ans</div>
+                </div>
+            </section>
 
-        <section>
-            <h1>Bienvenue sur mon Portfolio</h1>
-            <p>Je m'appelle Enzo Familiar-Marais, j'ai 19 ans et plein de talens. </p>
-            <p>Vous êtes actuellement sur mon site personnel créée afin de mieux retranscrire qui je suis et ce que je fais dans la vie.</p>
-            <p>
-                Je suis, depuis tout petit, passionné par l'informatique. Jusque là, vous allez me dire, rien d'original pour quelqu'un dans l'informatique et vous avez raison. Mais finalement, c'est ce qui me définit le mieux. J'ai toujours été attiré par les technologies et l'informatique en général. Venant d'un père informaticien, j'ai, très jeune, toujours baigné dans cet univers.
-            </p>
-            <p>
-                J'ai d'abord, comme tous les enfants de mon âge, commencé par les jeux vidéos (Call of Duty, Minecraft, Age of Empire, etc...). Puis, j'ai commencé à m'intéresser à la conception de PC et à la programmation. Il me fallait donc un ordinateur pour pouvoir m'adonner à ma passion. J'ai donc commencé à me renseigner sur les composants et à me construire mon propre PC.
-            </p>
-            <p>
-                Ensuite, j'ai de plus en plus joué aux jeux vidéos, notamment à Minecraft et Age of Empire. Puis, j'ai pris l'initiative d'ajouter des mods à Minecraft et donc, tout naturellement, il fallait que je me renseigne sur comment les ajouter. C'est donc à ce moment-là que j'ai commencé à m'intéresser à la programmation. J'ai donc commencé à apprendre le Java pour voir comment fonctionnaient les mods et les plugins.
-            </p>
-            <p>
-                L'apparition des serveurs Minecraft m'a permis de m'y intéresser encore plus et de jouer avec des amis. J'ai donc commencé à créer mes propres serveurs et à les configurer. J'ai donc appris à utiliser des outils comme Hamachi, LAN, etc.
-            </p>
-            <p>
-                Enfin, le brevet et la fin du collège approchant, mon activité sur Minecraft s'est peu à peu arrêtée pour me concentrer sur mes études. À la fin du collège, j'ai donc décidé de m'orienter vers un lycée général pour pouvoir continuer mes études sans me fermer de portes.
-            </p>
-            <p>
-                En première, j'ai pris l'option NSI (Numérique et Sciences Informatiques) qui m'a permis de me remettre à la programmation et de découvrir de nouveaux langages comme le Python et le HTML. À la fin de mes deux ans de lycée et ayant obtenu mon bac (mention bien), j'ai décidé de m'orienter vers un BUT informatique pour continuer dans cette voie.
-            </p>
-            <p>
-                Et me voilà aujourd'hui en deuxième année de BUT informatique, toujours aussi passionné par l'informatique et la programmation.
-            </p>
-        </section>
+            <section class="highlights container">
+                <div class="highlight-card">
+                    <p class="label">Années d'apprentissage</p>
+                    <p class="metric">10+ ans</p>
+                    <p class="detail">De la curiosité enfantine aux projets encadrés en BUT.</p>
+                </div>
+                <div class="highlight-card">
+                    <p class="label">Stack</p>
+                    <p class="metric">Java · Python · JS</p>
+                    <p class="detail">Fullstack avec une base solide en algorithmique et systèmes.</p>
+                </div>
+                <div class="highlight-card">
+                    <p class="label">Vision</p>
+                    <p class="metric">Expériences utiles</p>
+                    <p class="detail">Priorité à l'impact utilisateur avant la technologie.</p>
+                </div>
+            </section>
+
+            <section class="about container" id="parcours">
+                <div class="section-header">
+                    <p class="eyebrow">Mon Parcours</p>
+                    <h2>Des jeux vidéo aux projets professionnels</h2>
+                    <p class="lede">Une progression naturelle : curiosité, expérimentation, rigueur académique, puis pratique projet.</p>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-card">
+                        <h3>Découverte & bidouille</h3>
+                        <p>Montage PC, premiers serveurs Minecraft, ajout de mods et plugins pour comprendre ce qu'il y a sous le capot.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <h3>NSI au lycée</h3>
+                        <p>Python, HTML, algorithmes et premières bases solides. Bac mention bien qui confirme la voie.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <h3>BUT Informatique</h3>
+                        <p>Approche structurée : génie logiciel, réseaux, bases de données et projets collaboratifs.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="projects container" id="projets">
+                <div class="section-header">
+                    <p class="eyebrow">Mes Projets</p>
+                    <h2>Prototypes, apps et scripts utiles</h2>
+                    <p class="lede">Un aperçu avant la visite complète de ma page projets.</p>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="card-top">Web</div>
+                        <h3>Interface portfolio moderne</h3>
+                        <p>Design responsive, navigation claire, animations légères et contenu éditorial condensé.</p>
+                        <a class="text-link" href="HTML/Projet.html">Voir plus</a>
+                    </article>
+                    <article class="project-card">
+                        <div class="card-top">Automation</div>
+                        <h3>Scripts de déploiement</h3>
+                        <p>Gestion d'environnements, packaging et mises en production simplifiées.</p>
+                        <a class="text-link" href="HTML/Projet.html">Détails</a>
+                    </article>
+                    <article class="project-card">
+                        <div class="card-top">Data</div>
+                        <h3>Explorations Python</h3>
+                        <p>Analyses rapides, prototypes d'API et petits outils data-driven.</p>
+                        <a class="text-link" href="HTML/Projet.html">Explorer</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="passions container" id="passions">
+                <div class="section-header">
+                    <p class="eyebrow">Mes passions</p>
+                    <h2>Classique dans l'esprit, digital dans l'exécution</h2>
+                    <p class="lede">Quelques univers qui me nourrissent au quotidien et influencent ma façon de concevoir.</p>
+                </div>
+                <div class="passion-grid">
+                    <article class="passion-card">
+                        <h3>Architecture & esthétique</h3>
+                        <p>Symétrie, cadres, détails : une rigueur visuelle “haussmannienne” pour des interfaces élégantes.</p>
+                    </article>
+                    <article class="passion-card">
+                        <h3>Produit & UX</h3>
+                        <p>Comprendre le besoin, simplifier l'expérience, guider l'utilisateur — sans bruit inutile.</p>
+                    </article>
+                    <article class="passion-card">
+                        <h3>Culture numérique</h3>
+                        <p>Design systems, animations légères, performance : un rendu moderne, maîtrisé, "Trinity" dans l'ambiance.</p>
+                    </article>
+                </div>
+                <div style="margin-top: 14px;">
+                    <a class="btn secondary" href="HTML/Passions.html">Ouvrir la page passions</a>
+                </div>
+            </section>
+
+            <section class="ambitions container" id="ambitions">
+                <div class="section-header">
+                    <p class="eyebrow">Mes ambitions</p>
+                    <h2>Allier qualité logicielle et impact utilisateur</h2>
+                    <p class="lede">Construire des produits utiles, maintenables et élégants.</p>
+                </div>
+                <div class="ambition-grid">
+                    <article class="ambition-card">
+                        <h3>Excellence technique</h3>
+                        <p>Code clair, revues rigoureuses, tests et automatisation pour livrer avec confiance.</p>
+                    </article>
+                    <article class="ambition-card">
+                        <h3>Design utile</h3>
+                        <p>Mettre l'UX au centre : simplicité, accessibilité et guidance visuelle.</p>
+                    </article>
+                    <article class="ambition-card">
+                        <h3>Culture produit</h3>
+                        <p>Mesurer l'impact, apprendre vite et itérer pour servir au mieux les utilisateurs.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
 
         <footer>
-            <ul>
-                <li class="infofooter"><strong>Contact : </strong></li>
-                <li class="infofooter">Mail Universitaire : enzo.familiar-marais@etu.univ-orleans.fr</li>
-                <li class="infofooter">Mail Personnel : enzo.familiar.marais@gmail.com </li>
-            </ul>
-            <strong>Réseaux Sociaux</strong>
-            <ul class="SocialMedia">
-                <li class="infofooter"> <a href="https://www.linkedin.com/in/enzo-familiar-7a78622b5/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="linkedin"></a></li>
-                <li class="infofooter"><a href="https://github.com/EnzoFamiliar-Marais"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt=""></a> </li>
-            </ul>
+            <div class="footer-inner container">
+                <div>
+                    <p class="eyebrow">Contact</p>
+                    <p>enzo.familiar-marais@etu.univ-orleans.fr</p>
+                    <p>enzo.familiar.marais@gmail.com</p>
+                </div>
+                <div>
+                    <p class="eyebrow">Réseaux</p>
+                    <ul class="social-links">
+                        <li><a href="https://www.linkedin.com/in/enzo-familiar-7a78622b5/">LinkedIn</a></li>
+                        <li><a href="https://github.com/EnzoFamiliar-Marais">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cta">
+                    <p>Disponible pour stages et projets freelance.</p>
+                    <a class="btn ghost" href="mailto:enzo.familiar.marais@gmail.com">Discutons</a>
+                </div>
+            </div>
         </footer>
-        <script src="../JS/base.js" defer></script>
-        <script src="../JS/index.js" defer></script>
+        <script src="JS/base.js" defer></script>
+        <script src="JS/index.js" defer></script>
     </body>
 </html>

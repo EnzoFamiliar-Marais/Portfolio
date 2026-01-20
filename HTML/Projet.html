@@ -2,33 +2,61 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Projets</title>
-    <link rel="stylesheet" href="../CSS/projet.css">
     <link rel="stylesheet" href="../CSS/base.css">
-    <script src="../JS/projet.js" defer></script>
+    <link rel="stylesheet" href="../CSS/projet.css">
     <script src="../JS/base.js" defer></script>
 
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li class="nav"><a href="/../index.html">Accueil</a></li>
-                <li class="nav"><a href="/HTML/Projet.html">Projets</a></li>
-                <li class="nav"><a href="/HTML/Education.html">Education</a></li>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="../assets/accueil.png" alt="Logo maison">
+                <span class="brand">Portfolio</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="Education.html">Mon Parcours</a></li>
+                <li><a href="Projet.html">Mes Projets</a></li>
+                <li><a href="Passions.html">Mes passions</a></li>
+                <li><a href="../index.html#ambitions">Mes ambitions</a></li>
             </ul>
+            <div class="nav-cta">
+                <a class="btn ghost" href="mailto:enzo.familiar.marais@gmail.com">Me contacter</a>
+            </div>
         </nav>
     </header>
 
-    <section>
-        <h1> Mes Projets </h1>
-        <div class="projet">
-            <h2> Projet 1 </h2>
-            <p> Description </p>
-            <img src="../IMG/projet1.jpg" alt="Projet 1">
-        
-        </div>
-    </section>
+    <main class="container">
+        <section class="page-hero">
+            <p class="eyebrow">Mes projets</p>
+            <h1>Des prototypes utiles, propres et maintenables</h1>
+            <p class="lede">Une sélection — je peux détailler stack, défis techniques et apprentissages sur demande.</p>
+        </section>
+
+        <section class="project-grid">
+            <article class="project-card">
+                <div class="card-top">Web</div>
+                <h2>Portfolio</h2>
+                <p>Interface responsive, DA classique + digital, contenu éditorial concis.</p>
+                <a class="text-link" href="../index.html">Voir l’accueil</a>
+            </article>
+            <article class="project-card">
+                <div class="card-top">Automation</div>
+                <h2>Scripts & déploiement</h2>
+                <p>Outils pour simplifier les workflows: config, packaging, mise en prod.</p>
+                <a class="text-link" href="mailto:enzo.familiar.marais@gmail.com">Me demander des détails</a>
+            </article>
+            <article class="project-card">
+                <div class="card-top">Data</div>
+                <h2>Explorations Python</h2>
+                <p>Analyses rapides, prototypes, scripts orientés productivité.</p>
+                <a class="text-link" href="Passions.html">Voir mes inspirations</a>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

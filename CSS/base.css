@@ -1,52 +1,321 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+    --bg: #0b1021;
+    --panel: #0f1a2c;
+    --accent: #8fd6ff;
+    --accent-strong: #5cb3ff;
+    --accent-neon: #33ff99;
+    --accent-gold: #d6b36a;
+    --text: #e6ecf5;
+    --muted: #98a6c4;
+    --card: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+    --radius-lg: 18px;
+
+    --frame: rgba(214, 179, 106, 0.26);
+    --frame-strong: rgba(214, 179, 106, 0.42);
+    --glow: 0 0 28px rgba(51, 255, 153, 0.12);
+
+    --font-body: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    --font-display: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    --font-accent: 'Silkscreen', 'Poppins', system-ui, sans-serif;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
 }
+
 body {
-    background-color: #f2f2f2;
-    color: #333;
-    font-size: 20px;
+    background: radial-gradient(1200px at 20% 20%, rgba(92, 179, 255, 0.14), transparent),
+                radial-gradient(1200px at 80% 10%, rgba(143, 214, 255, 0.12), transparent),
+                var(--bg);
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.7;
 }
-.nav {
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(900px at 55% 40%, rgba(214, 179, 106, 0.06), transparent 55%),
+        radial-gradient(800px at 15% 20%, rgba(51, 255, 153, 0.08), transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        repeating-linear-gradient(25deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 10px);
+    background-size: auto, auto, 84px 84px, 84px 84px, auto;
+    opacity: 0.20;
+    mask-image: radial-gradient(circle at 30% 20%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 68%);
+}
+
+h1,
+h2,
+h3,
+.brand {
+    font-family: var(--font-display);
+}
+
+
+.brand {
+    font-family: var(--font-accent);
+    letter-spacing: 0.8px;
+}
+
+h1, h2, h3 { letter-spacing: 0.2px; }
+
+a { color: inherit; }
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: darkblue;
-    padding: 10px 20px;
-    border-radius: 30px;
-    width: 80%;
-    margin: 20px auto;
-    box-shadow: 2px 2px 10px #2c3e50;
+    gap: 24px;
+    padding: 14px 36px;
+    background: rgba(10, 14, 28, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
 }
-.nav ul {
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-logo img {
+    width: 44px;
+    height: 44px;
+}
+
+.brand {
+    color: var(--text);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 28px;
+    flex: 1;
+    justify-content: center;
 }
-.nav ul li a {
+
+.nav-links a {
     text-decoration: none;
-    color: white;
+    color: var(--muted);
     font-weight: 600;
-    padding: 8px 12px;
-    transition: 0.3s;
-    border-radius: 8px;
+    letter-spacing: 0.3px;
+    padding: 8px 10px;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
-.nav ul li a:hover {
-    background-color: #1a237e;
+
+.nav-links a:hover {
+    color: var(--accent);
+    transform: translateY(-1px);
 }
+
+.nav-links a.active {
+    color: var(--text);
+    border-bottom: 1px solid rgba(214, 179, 106, 0.55);
+}
+
+/* Filet classique (moulure) sous les titres de section */
+.section-header h2 {
+    position: relative;
+}
+
+.section-header h2::after {
+    content: "";
+    display: block;
+    width: min(240px, 60%);
+    height: 1px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, var(--frame-strong), rgba(255,255,255,0.08), transparent);
+    box-shadow: var(--glow);
+}
+
+.nav-cta {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn.primary {
+    background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+    color: #0b1021;
+    box-shadow: 0 12px 35px rgba(92, 179, 255, 0.35);
+    border: none;
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--text);
+}
+
+.btn.ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.lede {
+    color: var(--muted);
+    max-width: 720px;
+}
+
+.section-header {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
 footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    margin-top: 80px;
+    background: #090d1a;
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+    color: var(--muted);
 }
-footer ul {
+
+/* Cadre subtil "classique" pour les cartes */
+.highlight-card,
+.timeline-card,
+.project-card,
+.ambition-card,
+.passion-card,
+.panel {
+    position: relative;
+    border-radius: var(--radius-lg);
+}
+
+.highlight-card::before,
+.timeline-card::before,
+.project-card::before,
+.ambition-card::before,
+.passion-card::before,
+.panel::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border-radius: calc(var(--radius-lg) - 10px);
+    border: 1px solid rgba(214, 179, 106, 0.16);
+    pointer-events: none;
+}
+
+/* Coins "cadre" (classique) + léger néon (digital) */
+.highlight-card::after,
+.timeline-card::after,
+.project-card::after,
+.ambition-card::after,
+.passion-card::after,
+.panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+    background:
+        linear-gradient(var(--frame) 0 0) top left / 22px 1px no-repeat,
+        linear-gradient(var(--frame) 0 0) top left / 1px 22px no-repeat,
+        linear-gradient(var(--frame) 0 0) top right / 22px 1px no-repeat,
+        linear-gradient(var(--frame) 0 0) top right / 1px 22px no-repeat,
+        linear-gradient(var(--frame) 0 0) bottom left / 22px 1px no-repeat,
+        linear-gradient(var(--frame) 0 0) bottom left / 1px 22px no-repeat,
+        linear-gradient(var(--frame) 0 0) bottom right / 22px 1px no-repeat,
+        linear-gradient(var(--frame) 0 0) bottom right / 1px 22px no-repeat;
+    filter: drop-shadow(0 0 16px rgba(51, 255, 153, 0.10));
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.social-links {
     list-style: none;
-    padding: 0;
+    display: grid;
+    gap: 8px;
 }
-footer ul li {
-    margin: 5px 0;
+
+.social-links a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+.footer-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-cta {
+        order: 2;
+    }
 }

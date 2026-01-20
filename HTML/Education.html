@@ -1,20 +1,31 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <title>📖 Education</title>
-    <link rel="stylesheet" href="../CSS/education.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>📖 Mon Parcours</title>
     <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/education.css">
+    <script src="../JS/base.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li class="nav"><a href="../index.html">Accueil</a></li>
-                <li class="nav"><a href="projet.html">Projets</a></li>
-                <li class="nav"><a href="/HTML/Education.html">Education</a></li>
-                <li class="nav"><a href="/HTML/contact.html">Contact</a></li>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="../assets/accueil.png" alt="Logo maison">
+                <span class="brand">Portfolio</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="Education.html">Mon Parcours</a></li>
+                <li><a href="Projet.html">Mes Projets</a></li>
+                <li><a href="Passions.html">Mes passions</a></li>
+                <li><a href="../index.html#ambitions">Mes ambitions</a></li>
             </ul>
+            <div class="nav-cta">
+                <a class="btn ghost" href="mailto:enzo.familiar.marais@gmail.com">Me contacter</a>
+            </div>
         </nav>
     </header>
     <section>
@@ -22,7 +33,6 @@
             <h1 id="1">Cursus Scolaire</h1>
             <p>Vous allez voir dans cette section mon parcours scolaire depuis le lycée </p>
         </div>
-        <script src="../JS/education.js"></script>
         <div class="lycee">
             <img src="https://www.voltaire.com.fr/sites/default/files/media/image/2021-06/Parvis-aerien.gif" alt="">
             <div class="lycee-text">
@@ -54,7 +64,5 @@
         </ul>
     </footer>
     </section>
-
-    <script src="/JS/base.js"></script>
 </body>
 </html>
